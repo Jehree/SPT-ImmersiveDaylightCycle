@@ -21,7 +21,6 @@ C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompa
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\BepInEx.dll
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Comfort.dll
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Comfort.Unity.dll
-C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Fika.Core.dll
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Newtonsoft.Json.dll
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Sirenix.Serialization.dll
 C:\SP Tarkov\SPT-AKI-3.8.0-Backup\Devewoper\ImmersiveDaylightCycle\bin\FikaCompatible\Unity.TextMeshPro.dll

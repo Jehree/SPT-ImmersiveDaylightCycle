@@ -1,12 +1,7 @@
 ﻿using Aki.Reflection.Patching;
 using Comfort.Common;
 using EFT;
-
-#if FIKA_COMPAT
-    using Fika.Core.Networking;
-    using Jehree.ImmersiveDaylightCycle.FikaNetworking;
-#endif
-
+using Jehree.ImmersiveDaylightCycle.FikaNetworking;
 using HarmonyLib;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using JsonType;
@@ -16,6 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Aki.Reflection.Utils;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
@@ -31,12 +27,16 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         static void Postfix()
         {
             if (!Settings.modEnabled.Value) return;
-#if FIKA_COMPAT
-            if (Singleton<FikaClient>.Instantiated) return; //clients will set their time via the DaylightSync packet, so they don't need to do so here
+
+            // clients will set their time via the DaylightSync packet, so they don't need to do so here
+            // this will always return false in Release (non Fika) build
+            if (DaylightSync.IAmFikaClient()) return; 
 
             DateTime dateTime = Settings.GetCurrentGameTime();
+
+            // this function is hollowed and does nothing in Release (non Fika) build
             Plugin.DaylightSync.OnHostGameStarted(new UnityEngine.Vector3(dateTime.Hour, dateTime.Minute, dateTime.Second));
-#endif
+
             Utils.SetRaidTime();
 #if DEBUG
             Plugin.LogSource.LogError("OnGameStarted ran!");
@@ -46,10 +46,18 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
 
     internal class OfflineRaidEndedPatch : ModulePatch
     {
+        private static Type _targetClassType;
 
         protected override MethodBase GetTargetMethod()
         {
-            return AccessTools.Method(typeof(Class263), nameof(Class263.OfflineRaidEnded));
+            _targetClassType = PatchConstants.EftTypes.Single(targetClass =>
+                !targetClass.IsInterface &&
+                !targetClass.IsNested &&
+                targetClass.GetMethods().Any(method => method.Name == "OfflineRaidEnded") &&
+                targetClass.GetMethods().Any(method => method.Name == "ReceiveInsurancePrices")//
+            );
+
+            return AccessTools.Method(_targetClassType.GetTypeInfo(), "OfflineRaidEnded");
         }
 
         [PatchPostfix]

@@ -25,7 +25,6 @@ namespace Jehree.ImmersiveDaylightCycle.Patch {
 
         [PatchPostfix]
         static void Postfix(
-            GInterface147<RaidSettings> session,
             RaidSettings raidSettings,
             bool takeFromCurrent,
             ref TextMeshProUGUI ____currentPhaseTime,
@@ -86,7 +85,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patch {
         }
 
         [PatchPostfix]
-        static void Postfix(GInterface147<RaidSettings> session, RaidSettings raidSettings, bool takeFromCurrent, MatchMakerAcceptScreen __instance)
+        static void Postfix(RaidSettings raidSettings, bool takeFromCurrent, MatchMakerAcceptScreen __instance)
         {
             if (!Settings.modEnabled.Value) return;
 

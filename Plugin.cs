@@ -1,10 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
-
-#if FIKA_COMPAT
-    using Jehree.ImmersiveDaylightCycle.FikaNetworking;
-#endif
-
+using Jehree.ImmersiveDaylightCycle.FikaNetworking;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using Jehree.ImmersiveDaylightCycle.Patch;
 using Jehree.ImmersiveDaylightCycle.Patches;
@@ -16,32 +12,19 @@ using System.Threading.Tasks;
 
 namespace Jehree.ImmersiveDaylightCycle
 {
-    //save a static out of raid time
-
-    //at start of raid, set raid to this time and set accel multi to the one in config
-
-    //at raid end, save the new raid to our out of raid time
-
-    //visually set UI in menu to reflect time. Hide 2nd time option
-
-    //repeat!
-
-    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "0.0.1")]
+    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "1.0.0")]
+#if FIKA_COMPAT
+    [BepInDependency("com.fika.core")]
+#endif
     public class Plugin : BaseUnityPlugin
     {
         public static ManualLogSource LogSource;
-#if FIKA_COMPAT
-        public static DaylightSync DaylightSync { get; private set; };
-#endif
+        public static DaylightSync DaylightSync { get; private set; }
         private void Awake()
         {
             LogSource = Logger;
             Settings.Init(Config);
-
-#if FIKA_COMPAT
-        DaylightSync = new DaylightSync();
-#endif
-
+            DaylightSync = new DaylightSync();
 
             new TimeUIPanelPatch().Enable();
             new OnGameStartedPatch().Enable();
@@ -50,16 +33,14 @@ namespace Jehree.ImmersiveDaylightCycle
             new LocationConditionsPanelPatch().Enable();
         }
 
-#if FIKA_COMPAT
         private void OnEnable()
         {
             DaylightSync.InitOnEnable();
         }
 
-        private void OnDisable(bool disposing)
+        private void OnDisable()
         {
             DaylightSync.InitOnDisable();
         }
-#endif
     }
 }
