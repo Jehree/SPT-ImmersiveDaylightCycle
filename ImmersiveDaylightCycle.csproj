@@ -26,7 +26,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <DefineConstants>TRACE;SP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -48,7 +48,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Debug|AnyCPU'">
     <OutputPath>bin\Release_Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;RELEASE_DEBUG;RELEASE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SP_DEBUG;SP</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -63,11 +63,12 @@
   <ItemGroup>
     <Compile Include="FikaNetworking\DaylightSync.cs" />
     <Compile Include="FikaNetworking\DaylightSyncPacket.cs" />
+    <Compile Include="FikaNetworking\NetMiddleman.cs" />
     <Compile Include="Helpers\ConfigurationManagerAttributes.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Utils.cs" />
-    <Compile Include="Patch\GameStartAndEndPatches.cs" />
-    <Compile Include="Patch\LocationConditionsPanelPatches.cs" />
+    <Compile Include="Patches\GameStartAndEndPatches.cs" />
+    <Compile Include="Patches\UIPanelPatches.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

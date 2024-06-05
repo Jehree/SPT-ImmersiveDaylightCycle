@@ -14,7 +14,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
     {
         public static bool IsDayTime(DateTime dateTime)
         {
-            if (dateTime.Hour > 6 && dateTime.Hour < 21) {
+            if (dateTime.Hour > 5 && dateTime.Hour < 21) {
                 return true;
             }
             else {
@@ -35,11 +35,11 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             catch (Exception) { }
         }
 
-        public static void EnableTimeUI(TextMeshProUGUI phaseToEnable, Toggle timeToggle, string enabledText)
+        public static void EnableTimeUI(TextMeshProUGUI phaseToEnable, Toggle timeToggle, string enabledText, bool chooseThisTime = true)
         {
             try {
                 timeToggle.enabled = true;
-                timeToggle.isOn = true;
+                if (chooseThisTime) timeToggle.isOn = true;
                 phaseToEnable.transform.gameObject.SetActive(true);
                 var bg = timeToggle.transform.Find("Background").gameObject;
                 bg.GetComponent<Image>().color = Color.white;
@@ -49,7 +49,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             catch (Exception) { }
         }
 
-        public static void SetRaidTime()
+        public static void SetRaidTime(float daylightCycleRate)
         {
             if (!Singleton<GameWorld>.Instantiated) {
                 throw new Exception("Utils.SetRaidTime was called when the GameWorld instance was not yet instantiated!");
@@ -60,7 +60,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             dateTime = Settings.GetCurrentGameTime();
 
             var gameDateTimeInst = Singleton<GameWorld>.Instance.GameDateTime;
-            gameDateTimeInst.Reset(DateTime.Now, dateTime, Settings.daylightCycleRate.Value);
+            gameDateTimeInst.Reset(DateTime.Now, dateTime, daylightCycleRate);
         }
     }
 }

@@ -1,20 +1,18 @@
 ﻿#if FIKA_COMPAT
-    using Comfort.Common;
-    using Fika.Core.Modding;
-    using Fika.Core.Modding.Events;
-    using Fika.Core.Networking;
-    using Jehree.ImmersiveDaylightCycle;
-    using Jehree.ImmersiveDaylightCycle.FikaNetworking;
-    using Jehree.ImmersiveDaylightCycle.Helpers;
-    using LiteNetLib.Utils;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net.Mail;
-    using System.Text;
-    using System.Threading.Tasks;
-#endif
-
+using Comfort.Common;
+using Fika.Core.Modding;
+using Fika.Core.Modding.Events;
+using Fika.Core.Networking;
+using Jehree.ImmersiveDaylightCycle;
+using Jehree.ImmersiveDaylightCycle.FikaNetworking;
+using Jehree.ImmersiveDaylightCycle.Helpers;
+using LiteNetLib.Utils;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 
 // This class is hollowed when built as an SPT release to avoid referencing Fika while also not requiring the rest
@@ -29,7 +27,6 @@ using UnityEngine;
 namespace Jehree.ImmersiveDaylightCycle.FikaNetworking {
     public class DaylightSync
     {
-#if FIKA_COMPAT
         private NetDataWriter _writer;
 
         private NetDataWriter GetNetDataWriter()
@@ -50,24 +47,16 @@ namespace Jehree.ImmersiveDaylightCycle.FikaNetworking {
             }
 
             Settings.SetCurrentGameTime((int)packet.hostDateTime.x, (int)packet.hostDateTime.y, (int)packet.hostDateTime.z);
-            Settings.daylightCycleRate.Value = packet.hostCycleRate;
-            Utils.SetRaidTime();
+            Utils.SetRaidTime(packet.hostCycleRate);
         }
-#endif
         public static bool IAmFikaClient()
         {
-#if RELEASE
-            return false;
-#endif
-#if FIKA_COMPAT
             if (Singleton<FikaClient>.Instantiated) return true;
             return false;
-#endif
         }
 
         public void OnHostGameStarted(Vector3 hostDateTime)
         {
-#if FIKA_COMPAT
             if (!Singleton<FikaServer>.Instantiated) return;
 
             NetDataWriter netDataWriter = GetNetDataWriter();
@@ -77,26 +66,20 @@ namespace Jehree.ImmersiveDaylightCycle.FikaNetworking {
             Singleton<FikaServer>.Instance.SendDataToAll(netDataWriter, ref packet, LiteNetLib.DeliveryMethod.ReliableUnordered);
 
             Plugin.LogSource.LogInfo("Host game ran OnHostGameStarted, packets should have sent!");
-#endif
         }
 
         public void InitOnEnable()
         {
-#if FIKA_COMPAT
             FikaEventDispatcher.SubscribeEvent<FikaClientCreatedEvent>(OnFikaClientCreatedEvent);
             FikaEventDispatcher.SubscribeEvent<FikaClientDestroyedEvent>(OnFikaClientDestroyedEvent);
-#endif
         }
 
         public void InitOnDisable()
         {
-#if FIKA_COMPAT
             FikaEventDispatcher.UnsubscribeEvent<FikaClientCreatedEvent>(OnFikaClientCreatedEvent);
             FikaEventDispatcher.UnsubscribeEvent<FikaClientDestroyedEvent>(OnFikaClientDestroyedEvent);
-#endif
         }
 
-#if FIKA_COMPAT
         private void OnFikaClientCreatedEvent(FikaClientCreatedEvent clientCreatedEvent)
         {
             // listen for packet from server
@@ -120,7 +103,8 @@ namespace Jehree.ImmersiveDaylightCycle.FikaNetworking {
             //no server events currently
         }
         */
-#endif
+
     }
 }
+#endif
 
