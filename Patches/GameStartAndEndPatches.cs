@@ -1,4 +1,4 @@
-﻿using Aki.Reflection.Patching;
+﻿using SPT.Reflection.Patching;
 using Comfort.Common;
 using EFT;
 using Jehree.ImmersiveDaylightCycle.FikaNetworking;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Aki.Reflection.Utils;
+using SPT.Reflection.Utils;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
