@@ -23,12 +23,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release_Debug\</OutputPath>
     <DefineConstants>TRACE;SP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
@@ -56,9 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FikaNetworking\DaylightSync.cs" />
-    <Compile Include="FikaNetworking\DaylightSyncPacket.cs" />
-    <Compile Include="FikaNetworking\NetMiddleman.cs" />
+    <Compile Include="Fika\DaylightSync.cs" />
+    <Compile Include="Fika\DaylightSyncPacket.cs" />
+    <Compile Include="Fika\FikaInterface.cs" />
+    <Compile Include="Fika\FikaBridge.cs" />
     <Compile Include="Helpers\ConfigurationManagerAttributes.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Utils.cs" />

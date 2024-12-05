@@ -1,35 +1,30 @@
 ﻿using BepInEx;
+using BepInEx.Bootstrap;
 using BepInEx.Logging;
+using ImmersiveDaylightCycle.FikaNetworking;
 using Jehree.ImmersiveDaylightCycle.FikaNetworking;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using Jehree.ImmersiveDaylightCycle.Patches;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Jehree.ImmersiveDaylightCycle
 {
-    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "1.0.0")]
-#if SP
-    [BepInIncompatibility("com.fika.core")]
-#endif
-#if FIKA_COMPAT
-    [BepInDependency("com.fika.core")]
-#endif
+    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "1.1.0")]
     public class Plugin : BaseUnityPlugin
     {
         public static ManualLogSource LogSource { get; private set; }
-        public static NetMiddleman NetMiddleman { get; private set; }
+        public static bool FikaInstalled { get; private set; }
 
         private void Awake()
         {
+            FikaInstalled = Chainloader.PluginInfos.ContainsKey("com.fika.core");
+
             LogSource = Logger;
             Settings.Init(Config);
 
-            NetMiddleman = new NetMiddleman();
-            NetMiddleman.InitOnAwake();
+            LogSource.LogError(FikaInstalled);
+
+            FikaInterface.InitOnAwake();
 
             new TimeUIPanelPatch().Enable();
             new OnGameStartedPatch().Enable();
@@ -40,12 +35,12 @@ namespace Jehree.ImmersiveDaylightCycle
 
         private void OnEnable()
         {
-            NetMiddleman.InitOnEnable();
+            FikaInterface.InitOnEnable();
         }
 
         private void OnDisable()
         {
-            NetMiddleman.InitOnDisable();
+            FikaInterface.InitOnDisable();
         }
     }
 }

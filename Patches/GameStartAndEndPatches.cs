@@ -12,6 +12,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using SPT.Reflection.Utils;
+using ImmersiveDaylightCycle;
+using ImmersiveDaylightCycle.FikaNetworking;
+
+
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
@@ -30,12 +34,11 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
 
             // clients will set their time via the DaylightSync packet, so they don't need to do so here
             // this will always return false in SP (non Fika) build
-            if (Plugin.NetMiddleman.IAmFikaClient()) return; 
+            if (FikaInterface.IAmFikaClient()) return; 
 
             DateTime dateTime = Settings.GetCurrentGameTime();
 
-            // this function is hollowed and does nothing in SP (non Fika) build
-            Plugin.NetMiddleman.OnHostGameStarted(new UnityEngine.Vector3(dateTime.Hour, dateTime.Minute, dateTime.Second));
+            FikaInterface.OnHostGameStarted(new UnityEngine.Vector3(dateTime.Hour, dateTime.Minute, dateTime.Second));
 
             Utils.SetRaidTime(Settings.daylightCycleRate.Value);
 #if DEBUG
@@ -53,23 +56,25 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
             _targetClassType = PatchConstants.EftTypes.Single(targetClass =>
                 !targetClass.IsInterface &&
                 !targetClass.IsNested &&
-                targetClass.GetMethods().Any(method => method.Name == "OfflineRaidEnded") &&
-                targetClass.GetMethods().Any(method => method.Name == "ReceiveInsurancePrices")//
+                targetClass.GetMethods().Any(method => method.Name == "LocalRaidEnded") &&
+                targetClass.GetMethods().Any(method => method.Name == "ReceiveInsurancePrices")
             );
 
-            return AccessTools.Method(_targetClassType.GetTypeInfo(), "OfflineRaidEnded");
+            return AccessTools.Method(_targetClassType.GetTypeInfo(), "LocalRaidEnded");
         }
 
         [PatchPostfix]
-        static void Postfix(ExitStatus exitStatus, string exitName, double raidSeconds)
+        static void Postfix(LocalRaidSettings settings, GClass1924 results, GClass1301[] lostInsuredItems, Dictionary<string, GClass1301[]> transferItems)
         {
             if (!Settings.modEnabled.Value) return;
 
-            DateTime oldGameTime = Settings.GetCurrentGameTime();
+            bool playerDied = results.result == ExitStatus.Killed;
+            bool playerDisconnected = results.result == ExitStatus.Left;
+            bool resetNeeded = playerDied && Settings.timeResetsOnDeath.Value || playerDisconnected && Settings.timeResetsOnDisconnect.Value;
 
-            DateTime newGameTime = (exitStatus.ToString() == "Left" || exitStatus.ToString() == "Killed") && Settings.timeResetsOnDeath.Value
-                ? Settings.GetCurrentGameTime(true)
-                : oldGameTime.AddSeconds((raidSeconds * Settings.daylightCycleRate.Value) + (Settings.raidExitTimeJump.Value * 3600));
+            DateTime newGameTime = resetNeeded
+                ? Settings.GetResetGameTime()
+                : Settings.GetCurrentGameTime().AddSeconds(results.playTime * Settings.daylightCycleRate.Value + Settings.raidExitTimeJump.Value * 3600);
 
             Settings.SetCurrentGameTime(newGameTime.Hour, newGameTime.Minute, newGameTime.Second);
 #if DEBUG

@@ -17,6 +17,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
         public static ConfigEntry<int> currentSecond;
 
         public static ConfigEntry<bool> timeResetsOnDeath;
+        public static ConfigEntry<bool> timeResetsOnDisconnect;
         public static ConfigEntry<int> resetHour;
         public static ConfigEntry<int> resetMinute;
         public static ConfigEntry<int> resetSecond;
@@ -83,6 +84,13 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
                 "Enable this to make the time reset to the time below on death."
             );
 
+            timeResetsOnDisconnect = Config.Bind(
+                "2: Daylight Cycle",
+                "Time Resets On Disconnect",
+                true,
+                "Enable this to make the time reset to the time below on disconnect."
+            );
+
             resetHour = Config.Bind(
                 "2: Daylight Cycle",
                 "Death Reset Hour",
@@ -121,13 +129,14 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             );
         }
 
-        public static DateTime GetCurrentGameTime(bool resetOrNah = false)
+        public static DateTime GetCurrentGameTime()
         {
-            if ( resetOrNah ) {
-                return new DateTime(2024, 6, 8, resetHour.Value, resetMinute.Value, resetSecond.Value);
-            } else {
-                return new DateTime(2024, 6, 8, currentHour.Value, currentMinute.Value, currentSecond.Value);
-            }
+            return new DateTime(2024, 6, 8, currentHour.Value, currentMinute.Value, currentSecond.Value);
+        }
+
+        public static DateTime GetResetGameTime()
+        {
+            return new DateTime(2024, 6, 8, resetHour.Value, resetMinute.Value, resetSecond.Value);
         }
 
         public static void SetCurrentGameTime(int hour, int minute, int second)
