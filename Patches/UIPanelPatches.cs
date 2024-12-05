@@ -39,7 +39,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
                 return;
             }
 
-            DateTime dateTime = Settings.GetCurrentGameTime();
+            DateTime dateTime = Settings.GetSavedGameTime();
 
             if (raidSettings.SelectedLocation.Id == "factory4_day" || raidSettings.SelectedLocation.Id == "factory4_night") {
 
@@ -96,7 +96,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         {
             if (!Settings.modEnabled.Value) return;
 
-            DateTime dateTime = Settings.GetCurrentGameTime();
+            DateTime dateTime = Settings.GetSavedGameTime();
 
             TextMeshProUGUI timePanel;
 
@@ -118,7 +118,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
                 return;
             }
 
-            SetTimePanelText(timePanel, Settings.GetCurrentGameTime().ToString("HH:mm:ss"));
+            SetTimePanelText(timePanel, Settings.GetSavedGameTime().ToString("HH:mm:ss"));
         }
 
         static void SetTimePanelText(TextMeshProUGUI timePanel, string text)

@@ -1,5 +1,5 @@
 ﻿using Jehree.ImmersiveDaylightCycle;
-using Jehree.ImmersiveDaylightCycle.FikaNetworking;
+using Jehree.ImmersiveDaylightCycle.Fika;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace ImmersiveDaylightCycle.FikaNetworking
+namespace ImmersiveDaylightCycle.Fika
 {
     // This class should contain zero types or references to wrapper classes
     internal class FikaInterface
@@ -18,16 +18,16 @@ namespace ImmersiveDaylightCycle.FikaNetworking
             return FikaBridge.IAmFikaClient();
         }
 
-        public static void OnHostGameStarted(Vector3 hostDateTime)
+        public static bool IAmFikaServer()
         {
-            if (!Plugin.FikaInstalled) return;
-            FikaBridge.OnHostGameStarted(hostDateTime);
+            if (!Plugin.FikaInstalled) return false;
+            return FikaBridge.IAmFikaServer();
         }
 
-        public static void InitOnAwake()
+        public static void OnClientGameStarted()
         {
             if (!Plugin.FikaInstalled) return;
-            // none atm
+            FikaBridge.OnClientGameStarted();
         }
 
         public static void InitOnEnable()

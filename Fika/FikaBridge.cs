@@ -1,33 +1,34 @@
-﻿using UnityEngine;
+﻿using ImmersiveDaylightCycle.Fika;
+using UnityEngine;
 
-namespace Jehree.ImmersiveDaylightCycle.FikaNetworking {
+namespace Jehree.ImmersiveDaylightCycle.Fika {
 
     // This class must not cache any data. Do that in the wrapper classes if needed.
     public static class FikaBridge
     {
         public static bool IAmFikaClient()
         {
-            return DaylightSync.IAmFikaClient();
+            return DaylightSyncWrapper.IAmFikaClient();
         }
 
-        public static void OnHostGameStarted(Vector3 hostDateTime)
+        public static bool IAmFikaServer()
         {
-            DaylightSync.OnHostGameStarted(hostDateTime);
+            return DaylightSyncWrapper.IAmFikaServer();
         }
 
-        public static void InitOnAwake()
+        public static void OnClientGameStarted()
         {
-            // none atm
+            DaylightSyncWrapper.OnClientGameStarted();
         }
 
         public static void InitOnEnable()
         {
-            DaylightSync.InitOnEnable();
+            DaylightSyncWrapper.InitOnEnable();
         }
 
         public static void InitOnDisable()
         {
-            DaylightSync.InitOnDisable();
+            DaylightSyncWrapper.InitOnDisable();
         }
     }
 }

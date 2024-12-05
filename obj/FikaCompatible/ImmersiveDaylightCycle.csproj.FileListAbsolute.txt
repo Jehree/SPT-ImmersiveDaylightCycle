@@ -128,3 +128,4 @@ C:\SP Tarkov\SPT3.10.X\Dev\ImmersiveDaylightCycle\obj\FikaCompatible\ImmersiveDa
 C:\SP Tarkov\SPT3.10.X\Dev\ImmersiveDaylightCycle\obj\FikaCompatible\ImmersiveDaylightCycle.csproj.CoreCompileInputs.cache
 C:\SP Tarkov\SPT3.10.X\Dev\ImmersiveDaylightCycle\obj\FikaCompatible\Immersiv.C54AB81D.Up2Date
 C:\SP Tarkov\SPT3.10.X\Dev\ImmersiveDaylightCycle\obj\FikaCompatible\ImmersiveDaylightCycle.dll
+C:\SP Tarkov\SPT3.10.X\Dev\ImmersiveDaylightCycle\bin\FikaCompatible\Fika.Core.dll

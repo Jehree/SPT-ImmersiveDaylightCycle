@@ -49,7 +49,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             catch (Exception) { }
         }
 
-        public static void SetRaidTime(float daylightCycleRate)
+        public static void SetRaidTime()
         {
             if (!Singleton<GameWorld>.Instantiated) {
                 throw new Exception("Utils.SetRaidTime was called when the GameWorld instance was not yet instantiated!");
@@ -57,10 +57,10 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
 
             DateTime dateTime;
 
-            dateTime = Settings.GetCurrentGameTime();
+            dateTime = Settings.GetSavedGameTime();
 
             var gameDateTimeInst = Singleton<GameWorld>.Instance.GameDateTime;
-            gameDateTimeInst.Reset(DateTime.Now, dateTime, daylightCycleRate);
+            gameDateTimeInst.Reset(DateTime.Now, dateTime, Settings.daylightCycleRate.Value);
         }
     }
 }

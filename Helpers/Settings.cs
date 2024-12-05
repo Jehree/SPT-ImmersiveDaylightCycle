@@ -129,7 +129,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             );
         }
 
-        public static DateTime GetCurrentGameTime()
+        public static DateTime GetSavedGameTime()
         {
             return new DateTime(2024, 6, 8, currentHour.Value, currentMinute.Value, currentSecond.Value);
         }
@@ -139,7 +139,7 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             return new DateTime(2024, 6, 8, resetHour.Value, resetMinute.Value, resetSecond.Value);
         }
 
-        public static void SetCurrentGameTime(int hour, int minute, int second)
+        public static void SaveGameTime(int hour, int minute, int second)
         {
             currentHour.Value = hour;
             currentMinute.Value = minute;

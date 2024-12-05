@@ -1,7 +1,6 @@
 ﻿using SPT.Reflection.Patching;
 using Comfort.Common;
 using EFT;
-using Jehree.ImmersiveDaylightCycle.FikaNetworking;
 using HarmonyLib;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using JsonType;
@@ -13,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SPT.Reflection.Utils;
 using ImmersiveDaylightCycle;
-using ImmersiveDaylightCycle.FikaNetworking;
+using ImmersiveDaylightCycle.Fika;
 
 
 
@@ -32,18 +31,15 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         {
             if (!Settings.modEnabled.Value) return;
 
-            // clients will set their time via the DaylightSync packet, so they don't need to do so here
-            // this will always return false in SP (non Fika) build
-            if (FikaInterface.IAmFikaClient()) return; 
-
-            DateTime dateTime = Settings.GetCurrentGameTime();
-
-            FikaInterface.OnHostGameStarted(new UnityEngine.Vector3(dateTime.Hour, dateTime.Minute, dateTime.Second));
-
-            Utils.SetRaidTime(Settings.daylightCycleRate.Value);
-#if DEBUG
-            Plugin.LogSource.LogError("OnGameStarted ran!");
-#endif
+            if (FikaInterface.IAmFikaClient())
+            {
+                FikaInterface.OnClientGameStarted();
+            }
+            else
+            {
+                DateTime dateTime = Settings.GetSavedGameTime();
+                Utils.SetRaidTime();
+            }
         }
     }
 
@@ -74,9 +70,9 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
 
             DateTime newGameTime = resetNeeded
                 ? Settings.GetResetGameTime()
-                : Settings.GetCurrentGameTime().AddSeconds(results.playTime * Settings.daylightCycleRate.Value + Settings.raidExitTimeJump.Value * 3600);
+                : Settings.GetSavedGameTime().AddSeconds(results.playTime * Settings.daylightCycleRate.Value + Settings.raidExitTimeJump.Value * 3600);
 
-            Settings.SetCurrentGameTime(newGameTime.Hour, newGameTime.Minute, newGameTime.Second);
+            Settings.SaveGameTime(newGameTime.Hour, newGameTime.Minute, newGameTime.Second);
 #if DEBUG
             Plugin.LogSource.LogError("total secs: " + raidSeconds * Settings.daylightCycleRate.Value);
             Plugin.LogSource.LogError("total minutes: " + (raidSeconds * Settings.daylightCycleRate.Value) / 60);

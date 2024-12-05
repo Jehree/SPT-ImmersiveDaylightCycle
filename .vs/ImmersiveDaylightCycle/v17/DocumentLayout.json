@@ -3,35 +3,44 @@
   "WorkspaceRootPath": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FikaNetworking\\DaylightSync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\fika\\daylightsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fika\\daylightsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ImmersiveDaylightCycle||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\fika\\fikainterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fika\\fikainterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\helpers\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:helpers\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\fika\\fikabridge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fika\\fikabridge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\patches\\gamestartandendpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\fika\\daylightsyncwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fika\\daylightsyncwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\patches\\gamestartandendpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:patches\\gamestartandendpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\patches\\uipanelpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\helpers\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:helpers\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\helpers\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:helpers\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\fika\\packets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fika\\packets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\patches\\uipanelpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:patches\\uipanelpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\NetMiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FikaNetworking\\NetMiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,78 +50,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Packets.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\Packets.cs",
+              "RelativeDocumentMoniker": "Fika\\Packets.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\Packets.cs",
+              "RelativeToolTip": "Fika\\Packets.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T15:50:11.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ImmersiveDaylightCycle",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\ImmersiveDaylightCycle.csproj",
-              "RelativeDocumentMoniker": "ImmersiveDaylightCycle.csproj",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\ImmersiveDaylightCycle.csproj",
-              "RelativeToolTip": "ImmersiveDaylightCycle.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-05T01:25:14.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Test.cs",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Test.cs",
-              "RelativeDocumentMoniker": "Test.cs",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Test.cs",
-              "RelativeToolTip": "Test.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Title": "FikaInterface.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\FikaInterface.cs",
+              "RelativeDocumentMoniker": "Fika\\FikaInterface.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\FikaInterface.cs",
+              "RelativeToolTip": "Fika\\FikaInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T01:09:33.555Z"
+              "WhenOpened": "2024-12-05T15:50:04.14Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NetMiddleman.cs",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\NetMiddleman.cs",
-              "RelativeDocumentMoniker": "FikaNetworking\\NetMiddleman.cs",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\NetMiddleman.cs",
-              "RelativeToolTip": "FikaNetworking\\NetMiddleman.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAwwA8AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T22:04:57.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Settings.cs",
-              "RelativeDocumentMoniker": "Helpers\\Settings.cs",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Settings.cs",
-              "RelativeToolTip": "Helpers\\Settings.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAgwBQAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:36:16.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameStartAndEndPatches.cs",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\GameStartAndEndPatches.cs",
-              "RelativeDocumentMoniker": "Patches\\GameStartAndEndPatches.cs",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\GameStartAndEndPatches.cs",
-              "RelativeToolTip": "Patches\\GameStartAndEndPatches.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T20:20:53.745Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "UIPanelPatches.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\UIPanelPatches.cs",
               "RelativeDocumentMoniker": "Patches\\UIPanelPatches.cs",
               "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\UIPanelPatches.cs",
               "RelativeToolTip": "Patches\\UIPanelPatches.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAqwCgAAAAAAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowHgAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T20:12:54.405Z"
+              "WhenOpened": "2024-12-05T15:20:08.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -122,21 +99,88 @@
               "RelativeDocumentMoniker": "Plugin.cs",
               "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Plugin.cs",
               "RelativeToolTip": "Plugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABVAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAIAwwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T00:48:09.295Z",
+              "WhenOpened": "2024-12-05T14:35:52.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameStartAndEndPatches.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\GameStartAndEndPatches.cs",
+              "RelativeDocumentMoniker": "Patches\\GameStartAndEndPatches.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\GameStartAndEndPatches.cs",
+              "RelativeToolTip": "Patches\\GameStartAndEndPatches.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:25:55.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DaylightSync.cs",
-              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs",
-              "RelativeDocumentMoniker": "FikaNetworking\\DaylightSync.cs",
-              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs",
-              "RelativeToolTip": "FikaNetworking\\DaylightSync.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\DaylightSync.cs",
+              "RelativeDocumentMoniker": "Fika\\DaylightSync.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\DaylightSync.cs",
+              "RelativeToolTip": "Fika\\DaylightSync.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAE4AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T19:35:18.947Z"
+              "WhenOpened": "2024-12-05T14:24:57.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Settings.cs",
+              "RelativeDocumentMoniker": "Helpers\\Settings.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Settings.cs",
+              "RelativeToolTip": "Helpers\\Settings.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAgwI8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:24:22.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Utils.cs",
+              "RelativeDocumentMoniker": "Helpers\\Utils.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Utils.cs",
+              "RelativeToolTip": "Helpers\\Utils.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAADsAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:23:19.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FikaBridge.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\FikaBridge.cs",
+              "RelativeDocumentMoniker": "Fika\\FikaBridge.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\FikaBridge.cs",
+              "RelativeToolTip": "Fika\\FikaBridge.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T03:22:27.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DaylightSyncWrapper.cs",
+              "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\DaylightSyncWrapper.cs",
+              "RelativeDocumentMoniker": "Fika\\DaylightSyncWrapper.cs",
+              "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Fika\\DaylightSyncWrapper.cs",
+              "RelativeToolTip": "Fika\\DaylightSyncWrapper.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwEIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T14:20:54.681Z",
+              "EditorCaption": ""
             }
           ]
         }
