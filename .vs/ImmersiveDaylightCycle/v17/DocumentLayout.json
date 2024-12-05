@@ -3,23 +3,15 @@
   "WorkspaceRootPath": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|c:\\sp tarkov\\spt3.10.x\\dev\\immersivedaylightcycle\\fikanetworking\\daylightsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fikanetworking\\daylightsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ImmersiveDaylightCycle||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FikaNetworking\\DaylightSync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\fikanetworking\\netmiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:fikanetworking\\netmiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ImmersiveDaylightCycle||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\helpers\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -32,6 +24,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\patches\\uipanelpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}|ImmersiveDaylightCycle.csproj|solutionrelative:patches\\uipanelpatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\NetMiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FikaNetworking\\NetMiddleman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,11 +41,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ImmersiveDaylightCycle",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\ImmersiveDaylightCycle.csproj",
               "RelativeDocumentMoniker": "ImmersiveDaylightCycle.csproj",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Test.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Test.cs",
               "RelativeDocumentMoniker": "Test.cs",
@@ -68,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "NetMiddleman.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\NetMiddleman.cs",
               "RelativeDocumentMoniker": "FikaNetworking\\NetMiddleman.cs",
@@ -80,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Settings.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Helpers\\Settings.cs",
               "RelativeDocumentMoniker": "Helpers\\Settings.cs",
@@ -92,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "GameStartAndEndPatches.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\GameStartAndEndPatches.cs",
               "RelativeDocumentMoniker": "Patches\\GameStartAndEndPatches.cs",
@@ -104,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "UIPanelPatches.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Patches\\UIPanelPatches.cs",
               "RelativeDocumentMoniker": "Patches\\UIPanelPatches.cs",
@@ -116,28 +116,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Plugin.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Plugin.cs",
               "RelativeDocumentMoniker": "Plugin.cs",
               "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\Plugin.cs",
               "RelativeToolTip": "Plugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T00:48:09.295Z"
+              "WhenOpened": "2024-07-30T00:48:09.295Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DaylightSync.cs",
               "DocumentMoniker": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs",
               "RelativeDocumentMoniker": "FikaNetworking\\DaylightSync.cs",
               "ToolTip": "C:\\SP Tarkov\\SPT3.10.X\\Dev\\ImmersiveDaylightCycle\\FikaNetworking\\DaylightSync.cs",
               "RelativeToolTip": "FikaNetworking\\DaylightSync.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAowEYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T19:35:18.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T19:35:18.947Z"
             }
           ]
         }

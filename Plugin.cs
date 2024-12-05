@@ -9,7 +9,7 @@ using Jehree.ImmersiveDaylightCycle.Patches;
 
 namespace Jehree.ImmersiveDaylightCycle
 {
-    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "1.1.0")]
+    [BepInPlugin("Jehree.ImmersiveDaylightCycle", "Jehree.ImmersiveDaylightCycle", "2.1.0")]
     public class Plugin : BaseUnityPlugin
     {
         public static ManualLogSource LogSource { get; private set; }
