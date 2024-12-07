@@ -1,7 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Logging;
-using ImmersiveDaylightCycle.Fika;
+using Jehree.ImmersiveDaylightCycle.Fika;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using Jehree.ImmersiveDaylightCycle.Patches;
 

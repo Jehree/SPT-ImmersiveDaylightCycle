@@ -1,20 +1,14 @@
 ﻿using Fika.Core.Networking;
-using Jehree.ImmersiveDaylightCycle.Fika;
-using Jehree.ImmersiveDaylightCycle;
+using Jehree.ImmersiveDaylightCycle_FikaBridge;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Comfort.Common;
 using LiteNetLib;
 using Fika.Core.Modding.Events;
 using Fika.Core.Modding;
-using EFT;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 
-namespace ImmersiveDaylightCycle.Fika
+namespace Jehree.ImmersiveDaylightCycle.Fika
 {
     internal class DaylightSyncWrapper
     {

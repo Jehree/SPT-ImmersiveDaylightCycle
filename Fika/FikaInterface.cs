@@ -1,45 +1,35 @@
-﻿using Jehree.ImmersiveDaylightCycle;
-using Jehree.ImmersiveDaylightCycle.Fika;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-
-namespace ImmersiveDaylightCycle.Fika
+﻿namespace Jehree.ImmersiveDaylightCycle.Fika
 {
-    // This class should contain zero types or references to wrapper classes
     internal class FikaInterface
     {
         public static bool IAmFikaClient()
         {
             if (!Plugin.FikaInstalled) return false;
-            return FikaBridge.IAmFikaClient();
+            return DaylightSyncWrapper.IAmFikaServer();
         }
 
         public static bool IAmFikaServer()
         {
             if (!Plugin.FikaInstalled) return false;
-            return FikaBridge.IAmFikaServer();
+            return DaylightSyncWrapper.IAmFikaServer();
         }
 
         public static void OnClientGameStarted()
         {
             if (!Plugin.FikaInstalled) return;
-            FikaBridge.OnClientGameStarted();
+            DaylightSyncWrapper.OnClientGameStarted();
         }
 
         public static void InitOnEnable()
         {
             if (!Plugin.FikaInstalled) return;
-            FikaBridge.InitOnEnable();
+            DaylightSyncWrapper.InitOnEnable();
         }
 
         public static void InitOnDisable()
         {
             if (!Plugin.FikaInstalled) return;
-            FikaBridge.InitOnDisable();
+            DaylightSyncWrapper.InitOnDisable();
         }
     }
 }
