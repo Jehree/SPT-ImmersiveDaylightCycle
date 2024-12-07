@@ -103,7 +103,7 @@
     </Reference>
     <Reference Include="Fika.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\BepInEx\plugins.disabled\Fika.Core.dll</HintPath>
+      <HintPath>..\..\..\BepInEx\plugins\Fika.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
