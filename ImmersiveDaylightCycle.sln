@@ -4,26 +4,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDaylightCycle", "ImmersiveDaylightCycle.csproj", "{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{876C687B-0836-473B-B1F1-1515C00DDF8D} = {876C687B-0836-473B-B1F1-1515C00DDF8D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDaylightCycle-FikaBridge", "ImmersiveDaylightCycle-FikaBridge\ImmersiveDaylightCycle-FikaBridge.csproj", "{876C687B-0836-473B-B1F1-1515C00DDF8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		FikaCompatible_Debug|Any CPU = FikaCompatible_Debug|Any CPU
-		FikaCompatible|Any CPU = FikaCompatible|Any CPU
-		Release_Debug|Any CPU = Release_Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.FikaCompatible_Debug|Any CPU.ActiveCfg = FikaCompatible_Debug|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.FikaCompatible_Debug|Any CPU.Build.0 = FikaCompatible_Debug|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.FikaCompatible|Any CPU.ActiveCfg = FikaCompatible|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.FikaCompatible|Any CPU.Build.0 = FikaCompatible|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Release_Debug|Any CPU.ActiveCfg = Release_Debug|Any CPU
-		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Release_Debug|Any CPU.Build.0 = Release_Debug|Any CPU
 		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876C687B-0836-473B-B1F1-1515C00DDF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876C687B-0836-473B-B1F1-1515C00DDF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876C687B-0836-473B-B1F1-1515C00DDF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876C687B-0836-473B-B1F1-1515C00DDF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

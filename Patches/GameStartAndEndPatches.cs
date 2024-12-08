@@ -1,20 +1,13 @@
 ﻿using SPT.Reflection.Patching;
-using Comfort.Common;
 using EFT;
 using HarmonyLib;
 using Jehree.ImmersiveDaylightCycle.Helpers;
-using JsonType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using SPT.Reflection.Utils;
-using ImmersiveDaylightCycle;
-using ImmersiveDaylightCycle.Fika;
-
-
+using Jehree.ImmersiveDaylightCycle.Fika;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
