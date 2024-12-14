@@ -7,6 +7,7 @@ using LiteNetLib;
 using Fika.Core.Modding.Events;
 using Fika.Core.Modding;
 using Jehree.ImmersiveDaylightCycle.Helpers;
+using Fika.Core.Coop.Utils;
 
 namespace Jehree.ImmersiveDaylightCycle.Fika
 {
@@ -77,9 +78,19 @@ namespace Jehree.ImmersiveDaylightCycle.Fika
             if (Plugin.IAmDedicatedClient)
             {
                 FikaServer server = Singleton<FikaServer>.Instance;
-                RequestSyncDataPacket packet = new RequestSyncDataPacket();
+                RequestSyncDataPacket packet = new RequestSyncDataPacket(); 
                 server.SendDataToPeer(server.NetServer.FirstPeer, ref packet, DeliveryMethod.ReliableUnordered);
             }
+        }
+
+        public static string GetRaidId()
+        {
+            return FikaBackendUtils.GroupId;
+        }
+
+        public static string GetProfileId()
+        {
+            return FikaBackendUtils.Profile.ProfileId;
         }
     }
 }

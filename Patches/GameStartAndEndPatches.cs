@@ -8,6 +8,10 @@ using System.Linq;
 using System.Reflection;
 using SPT.Reflection.Utils;
 using Jehree.ImmersiveDaylightCycle.Fika;
+using ImmersiveDaylightCycle.Common;
+using SPT.Common.Utils;
+using Sirenix.Serialization;
+using Newtonsoft.Json;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
@@ -24,15 +28,11 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         {
             if (!Settings.modEnabled.Value) return;
 
-            if (FikaInterface.IAmFikaClient())
+            if (FikaInterface.IAmHost())
             {
-                FikaInterface.OnClientGameStarted();
+                Utils.ServerRoute(Utils.HostRaidStartedURL, FikaInterface.GetRaidId());
             }
-            else
-            {
-                DateTime dateTime = Settings.GetSavedGameTime();
-                Utils.SetRaidTime();
-            }
+            Utils.SetRaidTime();
         }
     }
 
@@ -57,27 +57,17 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         {
             if (!Settings.modEnabled.Value) return;
 
-            bool playerDied = results.result == ExitStatus.Killed;
-            bool playerDisconnected = results.result == ExitStatus.Left;
-            bool resetNeeded = playerDied && Settings.timeResetsOnDeath.Value || playerDisconnected && Settings.timeResetsOnDisconnect.Value;
+            IDCClientExitInfo exitInfo = new IDCClientExitInfo
+            {
+                RaidId = FikaInterface.GetRaidId(),
+                ProfileId = FikaInterface.GetProfileId(),
+                ExitStatus = results.result,
+                IsHost = FikaInterface.IAmHost(),
+                IsDedicatedClient = Plugin.IAmDedicatedClient,
+                SecondsInRaid = results.playTime,
+            };
 
-            DateTime newGameTime = resetNeeded
-                ? Settings.GetResetGameTime()
-                : Settings.GetSavedGameTime().AddSeconds(results.playTime * Settings.daylightCycleRate.Value + Settings.raidExitTimeJump.Value * 3600);
-
-            Settings.SaveGameTime(newGameTime.Hour, newGameTime.Minute, newGameTime.Second);
-#if DEBUG
-            Plugin.LogSource.LogError("total secs: " + raidSeconds * Settings.daylightCycleRate.Value);
-            Plugin.LogSource.LogError("total minutes: " + (raidSeconds * Settings.daylightCycleRate.Value) / 60);
-            Plugin.LogSource.LogError("total hours: " + (raidSeconds * Settings.daylightCycleRate.Value) / 3600);
-
-            Plugin.LogSource.LogError("new hour: " + newGameTime.Hour);
-            Plugin.LogSource.LogError("new minute: " + newGameTime.Minute);
-            Plugin.LogSource.LogError("new second: " + newGameTime.Second);
-
-            Plugin.LogSource.LogError("exit status: " + exitStatus.ToString());
-            Plugin.LogSource.LogError("exit name: " + exitName);
-#endif
+            Utils.ServerRoute(Utils.ClientLeftRaidURL, JsonConvert.SerializeObject(exitInfo));
         }
     }
 }

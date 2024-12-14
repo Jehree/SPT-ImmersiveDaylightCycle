@@ -30,9 +30,6 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Fika.Core">
-      <HintPath>..\..\BepInEx\plugins\Fika.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\CommandGroup.cs" />
+    <Compile Include="Common\ServerClasses.cs" />
     <Compile Include="Fika\DaylightSyncWrapper.cs" />
     <Compile Include="Helpers\ConfigurationManagerAttributes.cs" />
     <Compile Include="Fika\FikaInterface.cs" />
@@ -132,7 +131,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\EscapeFromTarkov_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Fika.Core">
+      <HintPath>..\..\BepInEx\plugins\Fika.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="bsg.console.core, Version=0.0.0.0, Culture=neutral, processorArchitecture=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\EscapeFromTarkov_Data\Managed\bsg.console.core.dll</HintPath>
+    </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(ProjectDir)\..\..\BepInEx\plugins\$(SolutionName)" mkdir "$(ProjectDir)\..\..\BepInEx\plugins\$(SolutionName)"
 copy "$(TargetPath)" "$(ProjectDir)\..\..\BepInEx\plugins\$(SolutionName)\$(TargetFileName)"</PostBuildEvent>

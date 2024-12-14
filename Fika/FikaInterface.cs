@@ -14,6 +14,12 @@
             return DaylightSyncWrapper.IAmFikaServer();
         }
 
+        public static bool IAmHost()
+        {
+            if (!Plugin.FikaInstalled) return true;
+            return DaylightSyncWrapper.IAmFikaServer();
+        }
+
         public static void OnClientGameStarted()
         {
             if (!Plugin.FikaInstalled) return;
@@ -30,6 +36,17 @@
         {
             if (!Plugin.FikaInstalled) return;
             DaylightSyncWrapper.InitOnDisable();
+        }
+
+        public static string GetRaidId()
+        {
+            if (!Plugin.FikaInstalled) return "singleplayer";
+            return DaylightSyncWrapper.GetRaidId();
+        }
+        public static string GetProfileId()
+        {
+            if (!Plugin.FikaInstalled) return "singleplayer";
+            return DaylightSyncWrapper.GetProfileId();
         }
     }
 }
