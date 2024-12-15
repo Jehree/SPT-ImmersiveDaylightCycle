@@ -33,15 +33,22 @@ const time_manager_1 = require("./time_manager");
 class RegistrationManager {
     static raidPath = instance_manager_1.Utils.pathCombine([instance_manager_1.Utils.modPath, "runtime_data", "raid_session.json"]);
     static onHostRaidStarted(url, info, sessionId, output, Inst) {
-        const raid = this.createNewRaid(output);
+        const raid = this.createNewRaid(info.data);
         if (this.raidExists()) {
-            Inst.log(`Raid session already exists, raid [${raid.raid_id}] will not advance global time`, LogTextColor_1.LogTextColor.YELLOW);
-            return;
+            const profileIds = Object.keys(Inst.profileHelper.getProfiles());
+            const currentRaidSessionHostIsLoggedIn = this.getRaid().raid_id in profileIds;
+            if (!currentRaidSessionHostIsLoggedIn) {
+                this.cleanUpRaidSession();
+            }
+            else {
+                Inst.log(`Raid session already exists, raid [${raid.raid_id}] will not advance global time`, LogTextColor_1.LogTextColor.YELLOW);
+                return;
+            }
         }
         this.createNewRaidFile(raid);
     }
     static onClientRaidExited(url, info, sessionId, output, Inst) {
-        const exitInfo = JSON.parse(output);
+        const exitInfo = info;
         if (!this.raidExists())
             return;
         const raid = this.getRaid();
@@ -57,34 +64,49 @@ class RegistrationManager {
                 time_manager_1.TimeManager.resetCurrentTime();
             }
             else {
+                time_manager_1.TimeManager.addSeconds(exitInfo.seconds_in_raid);
+                if (exitInfo.seconds_in_raid > 60 * 5)
+                    time_manager_1.TimeManager.doTimeJump();
             }
             this.cleanUpRaidSession();
         }
     }
     static onConsoleCommandReceived(url, info, sessionId, output, Inst) {
-        console.log(output);
-        const command = JSON.parse(output);
+        const command = info;
         switch (command.type) {
             case "idc_status": {
                 if (this.raidExists()) {
                     command.message = `An IDC raid session with the id: ${this.getRaid().raid_id} exists`;
                 }
                 else {
-                    command.message = "No IDC raid sessions exist";
+                    command.message = "No IDC raid session exists";
                 }
+                break;
             }
             case "idc_clear": {
                 if (this.raidExists()) {
-                    this.cleanUpRaidSession();
                     command.message = `An IDC raid session with the id: ${this.getRaid().raid_id} has been cleared!`;
+                    this.cleanUpRaidSession();
                 }
                 else {
-                    command.message = "No IDC raid sessions exists to clear";
+                    command.message = "No IDC raid session exists to clear";
                 }
+                break;
+            }
+            default: {
+                command.message = "Invalid command (This should never happen! Something is wrong!)";
             }
         }
-        command.message = "Invalid command";
         return JSON.stringify(command);
+    }
+    static onProfileLogin(url, info, sessionId, output, Inst) {
+        if (!this.raidExists())
+            return;
+        const profileId = output;
+        if (profileId != this.getRaid().raid_id)
+            return;
+        Inst.log("Raid session cleanup needed! Cleaning session for profile: " + profileId, LogTextColor_1.LogTextColor.RED);
+        this.cleanUpRaidSession();
     }
     static anyClientHasExitStatus(raid, exitStatus) {
         for (const profileId in raid.client_exits) {

@@ -9,9 +9,6 @@ using System.Reflection;
 using SPT.Reflection.Utils;
 using Jehree.ImmersiveDaylightCycle.Fika;
 using ImmersiveDaylightCycle.Common;
-using SPT.Common.Utils;
-using Sirenix.Serialization;
-using Newtonsoft.Json;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
@@ -67,7 +64,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
                 SecondsInRaid = results.playTime,
             };
 
-            Utils.ServerRoute(Utils.ClientLeftRaidURL, JsonConvert.SerializeObject(exitInfo));
+            Utils.ServerRoute(Utils.ClientLeftRaidURL, exitInfo);
         }
     }
 }

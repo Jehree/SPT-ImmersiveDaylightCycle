@@ -1,5 +1,5 @@
 import { ExitStatus } from "@spt/models/enums/ExitStatis";
-import { Utils } from "./instance_manager";
+import { Utils } from "./mod_helper";
 
 export type IDCConfig = {
     raid_exit_time_jump: number;
@@ -38,7 +38,9 @@ export type IDCCommand = {
 };
 
 export class Config {
+    private static configPath: string = Utils.pathCombine([Utils.modPath, "config.json"]);
+
     public static getConfig(): IDCConfig {
-        return JSON.parse(Utils.pathCombine([Utils.modPath, "config.json"])) as IDCConfig;
+        return Utils.readJson<IDCConfig>(this.configPath);
     }
 }

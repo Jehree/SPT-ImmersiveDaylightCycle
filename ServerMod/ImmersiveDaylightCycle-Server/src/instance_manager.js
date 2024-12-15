@@ -112,9 +112,8 @@ class InstanceManager {
             this.botGeneratorHelper = container.resolve("BotGeneratorHelper");
         }
     }
-    registerStaticRoute(routeURL, routeName, callable, boundClass = undefined, outputModified = false) {
-        const Inst = new InstanceManager();
-        Inst.init(this.container, InitStage.ALL);
+    registerStaticRoute(routeURL, routeName, callable, boundClass = undefined, // any call to 'this' in callable will call boundClass
+    outputModified = false) {
         if (boundClass) {
             callable = callable.bind(boundClass);
         }
@@ -122,13 +121,16 @@ class InstanceManager {
             {
                 url: routeURL,
                 action: async (url, info, sessionId, output) => {
+                    const Inst = new InstanceManager();
+                    Inst.init(this.container, InitStage.ALL);
                     const modifiedOutput = callable(url, info, sessionId, output, Inst);
                     if (outputModified) {
                         return modifiedOutput;
                     }
                     else {
-                        return output;
+                        return output || JSON.stringify({ value_not_needed: true });
                     }
+                    return output;
                 },
             },
         ], "aki");

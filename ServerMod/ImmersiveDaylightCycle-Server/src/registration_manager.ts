@@ -1,10 +1,9 @@
-import { InstanceManager, Utils } from "./instance_manager";
+import { ModHelper, Utils } from "./mod_helper";
 import * as fs from "fs";
 import { IDCRaid, Config, IDCClientExitInfo, IDCCommand } from "./types";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 import { ExitStatus } from "@spt/models/enums/ExitStatis";
 import { TimeManager } from "./time_manager";
-import { DateTime } from "@spt/models/enums/DateTime";
 
 export class RegistrationManager {
     private static raidPath: string = Utils.pathCombine([Utils.modPath, "runtime_data", "raid_session.json"]);
@@ -14,16 +13,27 @@ export class RegistrationManager {
         info: any,
         sessionId: string,
         output: string,
-        Inst: InstanceManager
+        Helper: ModHelper
     ): void {
-        const raid = this.createNewRaid(output);
+        const raid = this.createNewRaid(info.data);
 
         if (this.raidExists()) {
-            Inst.log(
-                `Raid session already exists, raid [${raid.raid_id}] will not advance global time`,
-                LogTextColor.YELLOW
-            );
-            return;
+            const profileIds = Object.keys(Helper.profileHelper.getProfiles());
+            const currentRaidSessionHostIsLoggedIn = this.getRaid().raid_id in profileIds;
+
+            if (!currentRaidSessionHostIsLoggedIn) {
+                Helper.log(
+                    "Raid session cleanup needed! This usually means the someone crashed. Cleaning...",
+                    LogTextColor.RED
+                );
+                this.cleanUpRaidSession();
+            } else {
+                Helper.log(
+                    `Raid session already exists, raid [${raid.raid_id}] will not advance global time`,
+                    LogTextColor.YELLOW
+                );
+                return;
+            }
         }
 
         this.createNewRaidFile(raid);
@@ -34,9 +44,9 @@ export class RegistrationManager {
         info: any,
         sessionId: string,
         output: string,
-        Inst: InstanceManager
+        Helper: ModHelper
     ): void {
-        const exitInfo = JSON.parse(output) as IDCClientExitInfo;
+        const exitInfo = info as IDCClientExitInfo;
         if (!this.raidExists()) return;
         const raid = this.getRaid();
         if (raid.raid_id != "singleplayer" && raid.raid_id != exitInfo.raid_id) return;
@@ -55,6 +65,8 @@ export class RegistrationManager {
             ) {
                 TimeManager.resetCurrentTime();
             } else {
+                TimeManager.addSeconds(exitInfo.seconds_in_raid);
+                if (exitInfo.seconds_in_raid > 60 * 5) TimeManager.doTimeJump();
             }
 
             this.cleanUpRaidSession();
@@ -66,32 +78,49 @@ export class RegistrationManager {
         info: any,
         sessionId: string,
         output: string,
-        Inst: InstanceManager
+        Helper: ModHelper
     ): string {
-        console.log(output);
-
-        const command = JSON.parse(output) as IDCCommand;
+        const command = info as IDCCommand;
 
         switch (command.type) {
             case "idc_status": {
                 if (this.raidExists()) {
-                    command.message = `An IDC raid session with the id: ${this.getRaid().raid_id} exists`;
+                    command.message = `An ImmersiveDaylightCycle raid session with the id: ${
+                        this.getRaid().raid_id
+                    } exists`;
                 } else {
-                    command.message = "No IDC raid sessions exist";
+                    command.message = "No ImmersiveDaylightCycle raid session exists";
                 }
+                break;
             }
             case "idc_clear": {
                 if (this.raidExists()) {
+                    command.message = `An ImmersiveDaylightCycle raid session with the id: ${
+                        this.getRaid().raid_id
+                    } has been cleared!`;
                     this.cleanUpRaidSession();
-                    command.message = `An IDC raid session with the id: ${this.getRaid().raid_id} has been cleared!`;
                 } else {
-                    command.message = "No IDC raid sessions exists to clear";
+                    command.message = "No ImmersiveDaylightCycle raid session exists to clear";
                 }
+                break;
+            }
+            default: {
+                command.message = "Invalid command (This should never happen! Something is wrong!)";
             }
         }
-        command.message = "Invalid command";
 
         return JSON.stringify(command);
+    }
+
+    public static onProfileLogin(url: string, info: any, sessionId: string, output: string, Helper: ModHelper): void {
+        if (!this.raidExists()) return;
+        const profileId = output;
+        if (profileId != this.getRaid().raid_id) return;
+        Helper.log(
+            "Raid session cleanup needed!  This usually means the someone crashed. Cleaning...",
+            LogTextColor.RED
+        );
+        this.cleanUpRaidSession();
     }
 
     private static anyClientHasExitStatus(raid: IDCRaid, exitStatus: ExitStatus): boolean {

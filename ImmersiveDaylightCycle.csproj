@@ -52,12 +52,6 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="ImmersiveDaylightCycle-FikaBridge\ImmersiveDaylightCycle-FikaBridge.csproj">
-      <Project>{876c687b-0836-473b-b1f1-1515c00ddf8d}</Project>
-      <Name>ImmersiveDaylightCycle-FikaBridge</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--BEGINNING OF PASTED REFERENCES-->
   <ItemGroup>

@@ -6,7 +6,7 @@ const instance_manager_1 = require("./instance_manager");
 class TimeManager {
     static timePath = instance_manager_1.Utils.pathCombine([instance_manager_1.Utils.modPath, "runtime_data", "time.json"]);
     static onClientTimeRequest(url, info, sessionId, output, Inst) {
-        return instance_manager_1.Utils.readJson(JSON.stringify(this.getCurrentTime()));
+        return JSON.stringify(this.getCurrentTime());
     }
     static getCurrentTime() {
         return instance_manager_1.Utils.readJson(this.timePath);

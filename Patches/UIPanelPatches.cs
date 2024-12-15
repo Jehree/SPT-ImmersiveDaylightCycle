@@ -1,18 +1,11 @@
 ﻿using SPT.Reflection.Patching;
-using Comfort.Common;
 using EFT;
 using EFT.UI.Matchmaker;
 using HarmonyLib;
 using Jehree.ImmersiveDaylightCycle.Helpers;
-using JsonType;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
@@ -39,7 +32,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
                 return;
             }
 
-            DateTime dateTime = Settings.GetSavedGameTime();
+            DateTime dateTime = Utils.GetCurrentTime();
 
             if (raidSettings.SelectedLocation.Id == "factory4_day" || raidSettings.SelectedLocation.Id == "factory4_night") {
 
@@ -96,7 +89,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
         {
             if (!Settings.modEnabled.Value) return;
 
-            DateTime dateTime = Settings.GetSavedGameTime();
+            DateTime dateTime = Utils.GetCurrentTime();
 
             TextMeshProUGUI timePanel;
 
@@ -118,7 +111,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
                 return;
             }
 
-            SetTimePanelText(timePanel, Settings.GetSavedGameTime().ToString("HH:mm:ss"));
+            SetTimePanelText(timePanel, dateTime.ToString("HH:mm:ss"));
         }
 
         static void SetTimePanelText(TextMeshProUGUI timePanel, string text)

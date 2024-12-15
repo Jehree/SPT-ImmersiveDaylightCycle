@@ -1,10 +1,8 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Logging;
-using EFT.Console.Core;
 using EFT.UI;
 using ImmersiveDaylightCycle.Common;
-using Jehree.ImmersiveDaylightCycle.Fika;
 using Jehree.ImmersiveDaylightCycle.Helpers;
 using Jehree.ImmersiveDaylightCycle.Patches;
 
@@ -31,21 +29,11 @@ namespace Jehree.ImmersiveDaylightCycle
                 new TimeUIPanelPatch().Enable();
                 new LocationConditionsPanelPatch().Enable();
                 new TimeUIUpdatePatch().Enable();
-                new OfflineRaidEndedPatch().Enable();
-                new OnGameStartedPatch().Enable();
             }
+            new OfflineRaidEndedPatch().Enable();
+            new OnGameStartedPatch().Enable();
 
             ConsoleScreen.Processor.RegisterCommandGroup<CommandGroup>();
-        }
-
-        private void OnEnable()
-        {
-            FikaInterface.InitOnEnable();
-        }
-
-        private void OnDisable()
-        {
-            FikaInterface.InitOnDisable();
         }
     }
 }

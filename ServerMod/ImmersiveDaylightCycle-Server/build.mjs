@@ -61,7 +61,7 @@ const logger = winston.createLogger({
     },
     format: winston.format.combine(
         winston.format.colorize(),
-        winston.format.printf(info => {
+        winston.format.printf((info) => {
             return `${info.level}: ${info.message}`;
         })
     ),
@@ -230,14 +230,14 @@ function createProjectName(packageJson) {
 }
 
 /**
- * Defines the location of the distribution directory where the final mod package will be stored and deletes any 
+ * Defines the location of the distribution directory where the final mod package will be stored and deletes any
  * existing distribution directory to ensure a clean slate for the build process.
  *
  * @param {string} currentDirectory - The absolute path of the current working directory.
  * @returns {Promise<string>} A promise that resolves to the absolute path to the distribution directory.
  */
 async function removeOldDistDirectory(projectDir) {
-    const distPath = path.join(projectDir, "dist");
+    const distPath = path.join(projectDir, "..", "..", "..", "..", "user", "mods", "ImmersiveDaylightCycle-Server");
     await fs.remove(distPath);
     return distPath;
 }

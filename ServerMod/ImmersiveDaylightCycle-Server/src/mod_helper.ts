@@ -52,24 +52,7 @@ export enum CurrencyId {
     USD = "5696686a4bdc2da3298b456a",
 }
 
-export type TraderIdsByName = {
-    mechanic: "5a7c2eca46aef81a7ca2145d";
-    skier: "58330581ace78e27b8b10cee";
-    peacekeeper: "5935c25fb3acc3127c3d8cd9";
-    therapist: "54cb57776803fa99248b456e";
-    prapor: "54cb50c76803fa8b248b4571";
-    jaeger: "5c0647fdd443bc2504c2d371";
-    ragman: "5ac3b934156ae10c4430e83c";
-    fence: "579dc571d53a0658a154fbec";
-};
-
-export type CurrencyIdsByName = {
-    rub: "5449016a4bdc2d6f028b456f";
-    eur: "569668774bdc2da2298b4568";
-    usd: "5696686a4bdc2da3298b456a";
-};
-
-export class InstanceManager {
+export class ModHelper {
     //initialized at preSptLoad
     public container: DependencyContainer;
     public preSptModLoader: PreSptModLoader;
@@ -139,7 +122,7 @@ export class InstanceManager {
         routeURL: string,
         routeName: string,
         callable: CallableFunction,
-        boundClass: any = undefined,
+        boundClass: any = undefined, // any call to 'this' in callable will call boundClass
         outputModified: boolean = false
     ): void {
         if (boundClass) {
@@ -152,16 +135,17 @@ export class InstanceManager {
                 {
                     url: routeURL,
                     action: async (url: string, info: any, sessionId: string, output: string) => {
-                        const Inst = new InstanceManager();
-                        Inst.init(this.container, InitStage.ALL);
+                        const Helper = new ModHelper();
+                        Helper.init(this.container, InitStage.ALL);
 
-                        const modifiedOutput = callable(url, info, sessionId, output, Inst);
+                        const modifiedOutput = callable(url, info, sessionId, output, Helper);
 
                         if (outputModified) {
                             return modifiedOutput;
                         } else {
-                            return output;
+                            return output || JSON.stringify({ value_not_needed: true });
                         }
+                        return output;
                     },
                 },
             ],
@@ -192,7 +176,7 @@ export class Utils {
     public static profilePath: string = path.normalize(path.join(__dirname, "..", "..", "..", "profiles"));
     public static modsFolderPath: string = path.normalize(path.join(__dirname, "..", ".."));
 
-    public static traderIdsByName: TraderIdsByName = {
+    public static traderIdsByName: Record<string, TraderId> = {
         mechanic: TraderId.MECHANIC,
         skier: TraderId.SKIER,
         peacekeeper: TraderId.PEACEKEEPER,
@@ -203,7 +187,7 @@ export class Utils {
         fence: TraderId.FENCE,
     };
 
-    public static currencyIdsByName: CurrencyIdsByName = {
+    public static currencyIdsByName: Record<string, CurrencyId> = {
         rub: CurrencyId.RUB,
         eur: CurrencyId.EUR,
         usd: CurrencyId.USD,

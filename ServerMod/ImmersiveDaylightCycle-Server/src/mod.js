@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mod = void 0;
 const instance_manager_1 = require("./instance_manager");
+const time_manager_1 = require("./time_manager");
 const registration_manager_1 = require("./registration_manager");
 // UI panel patch, client runs custom route to request time and caches it
 // server hooks route and sets the output to give it to client
@@ -19,43 +20,11 @@ class Mod {
     Inst = new instance_manager_1.InstanceManager();
     preSptLoad(container) {
         this.Inst.init(container, instance_manager_1.InitStage.PRE_SPT_LOAD);
-        /*
-        this.Inst.staticRouter.registerStaticRouter(
-            "MyStaticModRouter",
-            [
-                {
-                    url: "/jehree/idc/console_command",
-                    action: async (url, info, sessionId, output) => {
-                        console.log(output);
-                        return output;
-                    },
-                },
-            ],
-            "custom-static-my-mod"
-        );
-        */
-        /*
-        this.Inst.registerStaticRoute(
-            "/jehree/idc/request_time",
-            "ImmersiveDaylightCycle-ClientTimeRequested",
-            TimeManager.onClientTimeRequest,
-            undefined,
-            true
-        );
-        this.Inst.registerStaticRoute(
-            "/jehree/idc/host_raid_started",
-            "ImmersiveDaylightCycle-HostRaidStarted",
-            RegistrationManager.onHostRaidStarted,
-            undefined
-        );
-        this.Inst.registerStaticRoute(
-            "/jehree/idc/client_exited",
-            "ImmersiveDaylightCycle-ClientExitedRaid",
-            RegistrationManager.onClientRaidExited,
-            undefined
-        );
-        */
-        this.Inst.registerStaticRoute("/jehree/idc/console_command", "ImmersiveDaylightCycle-ConsoleCommand", registration_manager_1.RegistrationManager.onConsoleCommandReceived, undefined, true);
+        this.Inst.registerStaticRoute("/jehree/idc/console_command", "ImmersiveDaylightCycle-ConsoleCommand", registration_manager_1.RegistrationManager.onConsoleCommandReceived, registration_manager_1.RegistrationManager, true);
+        this.Inst.registerStaticRoute("/jehree/idc/host_raid_started", "ImmersiveDaylightCycle-HostRaidStarted", registration_manager_1.RegistrationManager.onHostRaidStarted, registration_manager_1.RegistrationManager);
+        this.Inst.registerStaticRoute("/jehree/idc/client_exited", "ImmersiveDaylightCycle-ClientExitedRaid", registration_manager_1.RegistrationManager.onClientRaidExited, registration_manager_1.RegistrationManager);
+        this.Inst.registerStaticRoute("/jehree/idc/request_time", "ImmersiveDaylightCycle-ClientTimeRequested", time_manager_1.TimeManager.onClientTimeRequest, time_manager_1.TimeManager, true);
+        this.Inst.registerStaticRoute("/launcher/profile/login", "ImmeriveDaylightCycle-CleanupCrashedSession", registration_manager_1.RegistrationManager.onProfileLogin, registration_manager_1.RegistrationManager);
     }
     postDBLoad(container) {
         this.Inst.init(container, instance_manager_1.InitStage.POST_DB_LOAD);

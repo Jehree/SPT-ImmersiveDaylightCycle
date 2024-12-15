@@ -1,5 +1,5 @@
 {
-    "name": "LogToConsole",
+    "name": "ImmersiveDaylightCycle-Server",
     "version": "1.0.0",
     "sptVersion": "~3.10",
     "loadBefore": [],
@@ -24,7 +24,7 @@
         "typescript": "5.4",
         "winston": "3.12"
     },
-    "author": "Chomp",
+    "author": "Jehree",
     "contributors": [],
     "license": "MIT"
 }

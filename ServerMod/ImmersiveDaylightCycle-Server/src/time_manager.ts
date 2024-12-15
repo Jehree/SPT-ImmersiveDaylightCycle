@@ -1,7 +1,6 @@
 import { Config, IDCTime } from "./types";
-import { Utils } from "./instance_manager";
-import { InstanceManager } from "./instance_manager";
-import { config } from "process";
+import { Utils } from "./mod_helper";
+import { ModHelper } from "./mod_helper";
 
 export class TimeManager {
     private static timePath = Utils.pathCombine([Utils.modPath, "runtime_data", "time.json"]);
@@ -11,9 +10,9 @@ export class TimeManager {
         info: any,
         sessionId: string,
         output: string,
-        Inst: InstanceManager
+        Helper: ModHelper
     ): string {
-        return Utils.readJson(JSON.stringify(this.getCurrentTime()));
+        return JSON.stringify(this.getCurrentTime());
     }
 
     public static getCurrentTime(): IDCTime {

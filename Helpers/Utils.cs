@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
@@ -57,21 +54,11 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             catch (Exception) { }
         }
 
-        /*
-        public static void SetRaidTime()
+        public static DateTime GetCurrentTime()
         {
-            if (!Singleton<GameWorld>.Instantiated) {
-                throw new Exception("Utils.SetRaidTime was called when the GameWorld instance was not yet instantiated!");
-            }
-
-            DateTime dateTime;
-
-            dateTime = Settings.GetSavedGameTime();
-
-            var gameDateTimeInst = Singleton<GameWorld>.Instance.GameDateTime;
-            gameDateTimeInst.Reset(DateTime.Now, dateTime, Settings.daylightCycleRate.Value);
+            IDCTime time = ServerRoute<IDCTime>(Utils.TimeRequestURL);
+            return new DateTime(2024, 6, 8, time.Hour, time.Minute, time.Second);
         }
-        */
 
         public static void SetRaidTime()
         {
@@ -86,14 +73,27 @@ namespace Jehree.ImmersiveDaylightCycle.Helpers {
             Singleton<GameWorld>.Instance.GameDateTime.Reset(DateTime.Now, dateTime, time.CycleRate);
         }
 
-        public static T ServerRoute<T>(string url, string data = "")
+        public static T ServerRoute<T>(string url, object data = default(object))
         {
-            var req = RequestHandler.PostJson(url, data);
+            string json = JsonConvert.SerializeObject(data);
+            var req = RequestHandler.PostJson(url, json);
             return JsonConvert.DeserializeObject<T>(req);
         }
-        public static string ServerRoute(string url, string data = "")
+        public static string ServerRoute(string url, object data = default(object))
         {
-            return RequestHandler.PostJson(url, data);
+            string json;
+            if (data is string)
+            {
+                Dictionary<string, string> dataDict = new Dictionary<string, string>();
+                dataDict.Add("data", (string)data);
+                json = JsonConvert.SerializeObject(dataDict);
+            }
+            else
+            {
+                json = JsonConvert.SerializeObject(data);
+            }
+
+            return RequestHandler.PutJson(url, json);
         }
     }
 }
