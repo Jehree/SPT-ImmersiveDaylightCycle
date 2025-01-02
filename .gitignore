@@ -6,3 +6,4 @@ ImmersiveDaylightCycle-FikaBridge/.vs/
 ImmersiveDaylightCycle-FikaBridge/obj/
 ServerMod/ImmersiveDaylightCycle-Server/src/*.js
 ServerMod/ImmersiveDaylightCycle-Server/src/*.js.map
+ServerMod/ImmersiveDaylightCycle-Server/node_modules/
