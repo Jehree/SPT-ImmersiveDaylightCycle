@@ -15,10 +15,5 @@ namespace Jehree.ImmersiveDaylightCycle.Fika
         {
             return FikaBackendUtils.GroupId;
         }
-
-        public static string GetProfileId()
-        {
-            return FikaBackendUtils.Profile.ProfileId;
-        }
     }
 }

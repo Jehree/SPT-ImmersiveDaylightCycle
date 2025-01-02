@@ -15,10 +15,5 @@ namespace Jehree.ImmersiveDaylightCycle.Fika
             if (!Plugin.FikaInstalled) return Singleton<GameWorld>.Instance.MainPlayer.ProfileId;
             return DaylightSyncWrapper.GetRaidId();
         }
-        public static string GetProfileId()
-        {
-            if (!Plugin.FikaInstalled) return Singleton<GameWorld>.Instance.MainPlayer.ProfileId;
-            return DaylightSyncWrapper.GetProfileId();
-        }
     }
 }

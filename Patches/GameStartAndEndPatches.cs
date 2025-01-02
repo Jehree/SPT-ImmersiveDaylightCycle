@@ -9,6 +9,7 @@ using System.Reflection;
 using SPT.Reflection.Utils;
 using Jehree.ImmersiveDaylightCycle.Fika;
 using ImmersiveDaylightCycle.Common;
+using Comfort.Common;
 
 namespace Jehree.ImmersiveDaylightCycle.Patches {
 
@@ -57,7 +58,7 @@ namespace Jehree.ImmersiveDaylightCycle.Patches {
             IDCClientExitInfo exitInfo = new IDCClientExitInfo
             {
                 RaidId = FikaInterface.GetRaidId(),
-                ProfileId = FikaInterface.GetProfileId(),
+                ProfileId = Singleton<GameWorld>.Instance.MainPlayer.ProfileId,
                 ExitStatus = results.result,
                 IsHost = FikaInterface.IAmHost(),
                 IsDedicatedClient = Plugin.IAmDedicatedClient,
