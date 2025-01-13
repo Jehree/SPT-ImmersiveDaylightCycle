@@ -24,10 +24,8 @@ export class TimeManager {
     }
 
     public static doTimeJump(): void {
-        const time = this.getCurrentTime();
         const config = Config.getConfig();
-        time.hour += config.raid_exit_time_jump;
-        this.setCurrentTime(time);
+        this.addSeconds(config.raid_exit_time_jump * 3600);
     }
 
     public static addSeconds(seconds: number) {
