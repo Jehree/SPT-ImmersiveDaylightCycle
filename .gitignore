@@ -1,9 +1,10 @@
-bin/
 .vs/
-obj/
+/*.zip
+ImmersiveDaylightCycle-Core/bin/
+ImmersiveDaylightCycle-Core/obj/
 ImmersiveDaylightCycle-FikaBridge/bin/
 ImmersiveDaylightCycle-FikaBridge/.vs/
 ImmersiveDaylightCycle-FikaBridge/obj/
-ServerMod/ImmersiveDaylightCycle-Server/src/*.js
-ServerMod/ImmersiveDaylightCycle-Server/src/*.js.map
-ServerMod/ImmersiveDaylightCycle-Server/node_modules/
+ImmersiveDaylightCycle-Server/src/*.js
+ImmersiveDaylightCycle-Server/src/*.js.map
+ImmersiveDaylightCycle-Server/node_modules/
